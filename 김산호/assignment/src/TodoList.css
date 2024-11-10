@@ -1,0 +1,56 @@
+.todoListWrapper {
+  padding: 5px;
+}
+.todo {
+  display: flex;
+  height: 18px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(102, 140, 255);
+}
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  margin-right: 5px;
+}
+.chk{ 
+  position: absolute; 
+  left: -999em; 
+}
+.circle{
+  display: inline-block;
+  width: 20px; height: 20px;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative; top: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.circle:after{
+  content: '\2714'; 
+  font-size: 24px; color: #333;
+  position: absolute; top: -14px; left: 0;
+  opacity: 0; 
+  transition: 0.2s; 
+}
+.chk:checked + .circle{ 
+  background-color: rgba(102, 140, 255);
+  border: 2px solid #333;
+}
+.chk:checked + .circle:after {
+  opacity: 0;
+}
+.done {
+  text-decoration: line-through;
+  text-decoration-color: black;
+}
+.delete {
+  margin-left: auto;
+  margin-right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}

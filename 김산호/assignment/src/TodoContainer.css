@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+* {
+  box-sizing: border-box;
+}
+.TodoContainer {
+  border: 1px solid #bbb;
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  box-shadow: 0px 0px 10px #DDD;
+  display: flex;
+  flex-direction: column;
+}
+.TodoContainer button {
+  margin-left: 5px;
+  padding: 3px 10px;
+}
