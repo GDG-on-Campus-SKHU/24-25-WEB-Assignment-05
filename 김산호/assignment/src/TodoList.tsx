@@ -9,10 +9,6 @@ type Props = {
 };
 
 function TodoList({todoList, toggleTodo, deleteTodo}: Props) {
-  const confirmDelete = (todo: Todo) => {
-    deleteTodo(todo.id);
-  };
-
   const trList = todoList.map(todo => (
     <div className="todo" key={todo.id}>
       <label className="checkboxContainer">
@@ -27,7 +23,7 @@ function TodoList({todoList, toggleTodo, deleteTodo}: Props) {
       <span className={todo.isDone ? 'done' : ''}>
         {todo.todoText}
       </span>
-      <span className='delete' onClick={() => confirmDelete(todo)}>삭제</span>
+      <span className='delete' onClick={() => deleteTodo(todo.id)}>삭제</span>
     </div>
   ));
 
