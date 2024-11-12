@@ -42,7 +42,10 @@ function TodoTable() {
   };
   const decrease = (id) => {
     d(id);
-    setSum(sum - 1);
+    const filterSum = Todo.filter(
+      (todo) => todo.isDone == false && todo.Id < 0
+    );
+    setSum(filterSum.length);
   };
   const d = (id) => {
     setTodo(Todo.filter((t) => t.Id !== id));
@@ -69,7 +72,9 @@ function TodoTable() {
         todo.Id === id ? { ...todo, isDone: !todo.isDone } : todo
       )
     );
-    setSum(sum - 1);
+
+    const filterSum = Todo.filter((todo) => todo.isDone == true);
+    setSum(filterSum.length);
     Todo.map((todo) => (todo.isDone == false ? strikeLine() : nonStrike()));
   };
 
