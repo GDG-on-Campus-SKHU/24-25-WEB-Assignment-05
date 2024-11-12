@@ -42,10 +42,10 @@ function TodoTable() {
   };
   const decrease = (id) => {
     d(id);
-    const filterSum = Todo.filter(
-      (todo) => todo.isDone == false && todo.Id < 0
-    );
-    setSum(filterSum.length);
+    setSum(sum - 1);
+    if (sum == 0) {
+      setSum(0);
+    }
   };
   const d = (id) => {
     setTodo(Todo.filter((t) => t.Id !== id));
