@@ -1,0 +1,26 @@
+.bottom {
+  margin-top: auto;
+  display: flex;
+  border-top: 1px solid #bbb;
+}
+.todayTasksDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(102, 140, 255);
+  flex: 1;
+}
+.addTodoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(102, 140, 255);
+  flex: 1;
+  cursor: pointer;
+}
