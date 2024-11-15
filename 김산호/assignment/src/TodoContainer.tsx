@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import type { Todo, AddTodoFunc, ToggleTodoFunc, DeleteTodoFunc } from './types';
 import TodoList from "./TodoList";
 import './TodoContainer.css';
 import Header from "./Header";
@@ -11,19 +10,19 @@ function TodoContainer() {
   const [todoText, setTodoText] = useState<string>('');
 
   const onClick = () => {
-    if (todoText.trim() === '') {
-      alert('등록할 일정을 입력해주세요!');
-    } else {
-      addTodo(todoText);
-      setTodoText('');
-    }
+    addTodo(todoText);
+    setTodoText('');
   };
 
   const addTodo: AddTodoFunc = (todoText: string) => {
-    const lastIndex = todoList.length - 1;
-    const lastId = lastIndex == -1 ? 0 : todoList[lastIndex].id;
-    const todo = {id: lastId + 1, todoText: todoText, isDone: false};
-    setTodoList([...todoList, todo]);
+    if (todoText.trim() === '') {
+      alert('등록할 일정을 입력해주세요!');
+    } else {
+      const lastIndex = todoList.length - 1;
+      const lastId = lastIndex == -1 ? 0 : todoList[lastIndex].id;
+      const todo = {id: lastId + 1, todoText: todoText, isDone: false};
+      setTodoList([...todoList, todo]);
+    }
   }
 
   const toggleTodo: ToggleTodoFunc = (id: number) => {

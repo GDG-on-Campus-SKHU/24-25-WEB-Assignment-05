@@ -1,5 +1,4 @@
 import React from 'react'
-import type { Todo, ToggleTodoFunc, DeleteTodoFunc } from './types'
 import './TodoList.css';
 
 type Props = {

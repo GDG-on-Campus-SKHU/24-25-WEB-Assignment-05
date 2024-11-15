@@ -1,4 +1,3 @@
-import type { Todo } from "./types"
 import './Bottom.css';
 
 type Props = {
@@ -7,9 +6,11 @@ type Props = {
 }
 
 function Bottom({todoList, onClick}: Props) {
+  const todayTasks = todoList.filter((todo) => !todo.isDone);
+
   return (
     <div className="bottom">
-      <div className="todayTasksDiv">오늘 할 일 {todoList.length}</div>
+      <div className="todayTasksDiv">오늘 할 일 {todayTasks.length}</div>
       <div className="addTodoDiv" onClick={onClick}>추가하기</div>
     </div>
   )
